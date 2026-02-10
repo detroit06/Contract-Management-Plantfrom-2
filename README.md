@@ -54,3 +54,35 @@ Created → Approved → Sent → Signed → Locked
 
 ## 📁 Project Structure
 
+eurusys-contract-app/
+│
+├── public/
+├── src/
+│ ├── components/
+│ ├── context/
+│ ├── pages/
+│ ├── types/
+│ ├── utils/
+│ ├── App.tsx
+│ └── main.tsx
+│
+├── package.json
+├── tsconfig.json
+└── README.md
+
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/your-username/eurusys-contract-app.git
+
+cd eurusys-contract-app
+npm install
+npm run dev
+http://localhost:5173
+
+
