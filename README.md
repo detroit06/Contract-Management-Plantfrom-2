@@ -1,73 +1,56 @@
-# React + TypeScript + Vite
+# Eurusys Contract Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern Contract Management Platform built using **React + TypeScript + Vite**.  
+This application allows users to create reusable blueprints, generate contracts, and manage the full contract lifecycle with controlled state transitions.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+### 📄 Blueprint Management
+- Create, edit, and delete contract blueprints
+- Dynamic field support (Text, Date, Checkbox, Signature)
+- Reusable structure for multiple contracts
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 📝 Contract Generation
+- Generate contracts from selected blueprints
+- Fill contract-specific data
+- Store and manage multiple contracts
 
-## Expanding the ESLint configuration
+### 🔄 Contract Lifecycle Management
+Contracts follow a strict state transition:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Created → Approved → Sent → Signed → Locked  
+            ↘  
+           Revoked  
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+#### Rules:
+- Cannot skip lifecycle steps
+- Locked contracts cannot be edited
+- Revoked contracts cannot move forward
+- UI only enables valid actions
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 📊 Dashboard View
+- View contracts in tabular format
+- Filter/group by status
+- See key details:
+  - Contract Name
+  - Blueprint Name
+  - Status
+  - Created Date
+- Perform lifecycle actions directly from dashboard
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠 Tech Stack
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Frontend: React
+- Language: TypeScript
+- Build Tool: Vite
+- State Management: React Context API
+- Version Control: Git & GitHub
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## 📁 Project Structure
+
